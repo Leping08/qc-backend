@@ -1,0 +1,31 @@
+models:
+  Measurement:
+    instrument_id: id
+    lot_number_id: id
+    reagent_id: id
+    user_id: id
+    date: date
+    time: time
+    level: unsignedInteger
+    value: float
+    softDeletes
+    relationships:
+      belongsTo: Instrument, LotNumber, Reagent, User
+
+  Instrument:
+    name: string:400
+    softDeletes
+    relationships:
+      hasMany: Measurement
+
+  LotNumber:
+    name: string:400
+    softDeletes
+    relationships:
+      hasMany: Measurement
+
+  Reagent:
+    name: string:400
+    softDeletes
+    relationships:
+      hasMany: Measurement
