@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/** @see MeasurementsController::index() */
+Route::get('/measurements', 'Api\MeasurementsController@show');
+
+/** @see MeasurementsController::index() */
+Route::get('/instruments', 'Api\InstrumentsController@show');
