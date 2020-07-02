@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 /** @see \App\Http\Controllers\ImportController::index */
-Route::get('/import', 'ImportController@index');
+//Route::get('/import', 'ImportController@index');

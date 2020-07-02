@@ -3,20 +3,20 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Instrument;
+use App\Reagent;
 use Illuminate\Http\Request;
 
-class InstrumentsController extends Controller
+class ReagentsController extends Controller
 {
     public function index(Request $request)
     {
         //TODO add scope and with logic
-        return Instrument::all();
+        return Reagent::all();
     }
 
-    public function show(Instrument $instrument)
+    public function show(Reagent $reagent)
     {
         //TODO add scope and with logic
-        return $instrument->load('measurements');
+        return $reagent->load('measurements');
     }
 }

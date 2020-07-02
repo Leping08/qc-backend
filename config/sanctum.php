@@ -44,5 +44,5 @@ return [
         'encrypt_cookies' => App\Http\Middleware\EncryptCookies::class,
     ],
 
-    'domain' => '.domain.com'
+    'domain' => '.deep-waterfall-5nk7l1t5wpje.vapor-farm-a1.com'
 ];

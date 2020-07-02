@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class MeasurementsController extends Controller
 {
-    public function show(Request $request)
+    public function index(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'start_date' => ['required', 'date'],
@@ -32,5 +32,11 @@ class MeasurementsController extends Controller
         }
 
         return $query->get();
+    }
+
+    public function show(Measurement $measurement)
+    {
+        //TODO add scope and with logic
+        return $measurement;
     }
 }
