@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \Illuminate\Support\Facades\Auth;
 
@@ -14,11 +15,12 @@ use \Illuminate\Support\Facades\Auth;
 |
 */
 
-//Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/** @see CustomAuthController::login() */
+Route::post('/login', 'Auth\CustomAuthController@login');
+
+/** @see CustomAuthController::logout() */
+Route::get('/logout', 'Auth\CustomAuthController@logout');
 
 /** @see \App\Http\Controllers\ImportController::index */
 //Route::get('/import', 'ImportController@index');

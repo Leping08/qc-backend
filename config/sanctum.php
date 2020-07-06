@@ -13,13 +13,7 @@ return [
     |
     */
 
-    //'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'localhost,127.0.0.1,127.0.0.1:8000,::1')),
-    'stateful' => [
-
-        'localhost',
-
-        'deep-waterfall-5nk7l1t5wpje.vapor-farm-a1.com'
-    ],
+    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'localhost,127.0.0.1')),
 
     /*
     |--------------------------------------------------------------------------
@@ -50,5 +44,4 @@ return [
         'encrypt_cookies' => App\Http\Middleware\EncryptCookies::class,
     ],
 
-    'domain' => '.localhost'
 ];
