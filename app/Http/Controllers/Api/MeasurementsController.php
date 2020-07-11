@@ -15,7 +15,8 @@ class MeasurementsController extends Controller
         $validator = Validator::make($request->all(), [
             'start_date' => ['required', 'date'],
             'end_date' => ['required', 'date'],
-            'instrument' => ['numeric', 'nullable', 'exists:instruments,id']
+            'instrument' => ['numeric', 'nullable', 'exists:instruments,id'],
+            'level' => ['numeric', 'nullable']
         ]);
 
         if ($validator->fails()) {
@@ -31,7 +32,11 @@ class MeasurementsController extends Controller
             $query->where('instrument_id', $request['instrument']);
         }
 
-        return $query->get();
+        if ($request['level']) {
+            $query->where('level', $request['level']);
+        }
+
+        return $query->orderByDesc('measurement_time')->get();
     }
 
     public function show(Measurement $measurement)
